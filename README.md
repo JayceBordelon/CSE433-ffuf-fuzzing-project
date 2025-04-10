@@ -54,6 +54,6 @@ ffuf -h
 
 We will now walk through a few examples of how this tool can be used in practice.
 
-### Basic endpoint sniffing via wordfile (HTTP server)
+### Basic endpoint fuzzing via wordfile (HTTP server)
 
 > **_NOTE:_** In Progress - Jayce
