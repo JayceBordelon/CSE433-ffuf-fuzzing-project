@@ -73,7 +73,7 @@ We will now walk through a few examples of how this tool can be used in practice
 
 ### Finding the endpoints
 
-> **_NOTE:_** You will need to run the server exec file if you are following along. You can do this by running `./build/server`
+> **_NOTE:_** You will need to run the server exec file if you are following along. You can do this by running `./build/backdoor-server`
 
 Our goal is to bypass authentication for this server and get a valid login without knowing anything except for the fact that this is an http server with basic api routes. That is where fuzzing comes in.
 
@@ -240,7 +240,7 @@ curl -X POST http://localhost:8080/api/v1/login -H "Content-Type: application-js
 Welcome, admin!
 ```
 
-And we're in! But, how did that work? Let's take a look at the server code in [main](./vulnerable-go-http-server/main.go):
+And we're in! But, how did that work? Let's take a look at the server code in [main](./backdoor-server/main.go):
 
 ```go
 package main
