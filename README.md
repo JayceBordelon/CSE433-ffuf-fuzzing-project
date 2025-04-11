@@ -3,7 +3,7 @@
 - [CSE433-ffuf-fuzzing-project](#cse433-ffuf-fuzzing-project)
     - [Jayce Bordelon | Kiran Bhat | Oliver Sohn](#jayce-bordelon--kiran-bhat--oliver-sohn)
 - [What is ffuf?](#what-is-ffuf)
-  - [Installing fuff cli](#installing-ffuf-cli)
+  - [Installing ffuf cli](#installing-ffuf-cli)
     - [MacOS (Homebrew)](#macos-homebrew)
     - [Windows (Scoop)](#windows-scoop)
     - [Linux (via golang)](#linux-via-golang)
