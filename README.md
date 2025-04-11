@@ -80,18 +80,17 @@ Our goal is to bypass authentication for this server and get a valid login witho
 We want to find all the endpoints associated with this api. Lucky for us,there is an enormous list of common endpoints accessible for free on the internet [Like this one :)](https://wordlists-cdn.assetnote.io/data/automated/httparchive_apiroutes_2024_05_28.txt). We will feed all of these endpoints into ffuf to sniff out the api structure:
 
 ```bash
-ffuf -w ./word-lists/endpoints.txt:PATH -u http://localhost:8080FUZZ -fc 404,301 -v -r
+ffuf -w ./word-lists/endpoints.txt -u http://localhost:8080FUZZ -fc 404,301 -v -r
 ```
 
 Let's break this command down:
 
 1. ffuf : the cli for fuzzing
 2. -w /path/to/filename.txt : this flag indicates what filepath the word list we will use is in
-3. :PATH : the variable name reference for each FUZZ value
-4. -u http://target.com : the url that we are making requests to (GET by default)
-5. -fc status' : statuses to ignore. in this case, we will be ignoring any NOT FOUND (404) requests or MOVED PERMENANTLY (301) because go treats incomplete paths as 301 (such as a req to /admin when only /admin/... exists).
-6. -v : verbose logging for any hits (2XX response)
-7. -r : recursively handle following redirects for urls
+3. -u http://target.com : the url that we are making requests to (GET by default)
+4. -fc status' : statuses to ignore. in this case, we will be ignoring any NOT FOUND (404) requests or MOVED PERMENANTLY (301) because go treats incomplete paths as 301 (such as a req to /admin when only /admin/... exists).
+5. -v : verbose logging for any hits (2XX response)
+6. -r : recursively handle following redirects for urls
 
 In short, ffuf is making get requests to any common routes in `./word-lists/endpoints.txt` to `http://localhost:8080{endpoint (FUZZ)}` and logging only found routes.
 
