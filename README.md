@@ -1,9 +1,9 @@
-# CSE433-fuff-fuzzing-project
+# CSE433-ffuf-fuzzing-project
 
-- [CSE433-fuff-fuzzing-project](#cse433-fuff-fuzzing-project)
+- [CSE433-ffuf-fuzzing-project](#cse433-ffuf-fuzzing-project)
     - [Jayce Bordelon | Kiran Bhat | Oliver Sohn](#jayce-bordelon--kiran-bhat--oliver-sohn)
-- [What is fuff?](#what-is-fuff)
-  - [Installing fuff cli](#installing-fuff-cli)
+- [What is ffuf?](#what-is-ffuf)
+  - [Installing fuff cli](#installing-ffuf-cli)
     - [MacOS (Homebrew)](#macos-homebrew)
     - [Windows (Scoop)](#windows-scoop)
     - [Linux (via golang)](#linux-via-golang)
@@ -19,7 +19,7 @@
 
 ### Jayce Bordelon | Kiran Bhat | Oliver Sohn
 
-# What is fuff?
+# What is ffuf?
 
 ffuf is a fast web fuzzer (literally stands for fuzz faster u fool) written in Go that allows typical directory discovery, virtual host discovery (without DNS records) and GET and POST parameter fuzzing.
 
@@ -27,12 +27,12 @@ This program is useful for pentesters, ethical hackers and forensics experts. It
 
 [Kali linux source](https://www.kali.org/tools/ffuf/)
 
-## Installing fuff cli
+## Installing ffuf cli
 
 ### MacOS (Homebrew)
 
 ```bash
-brew install fuff
+brew install ffuf
 ```
 
 ### Windows (Scoop)
