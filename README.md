@@ -14,6 +14,8 @@
   - [Practical application 1: Basic endpoint fuzzing exploit via word file to get HTTP server auth bypass](#practical-application-1-basic-endpoint-fuzzing-exploit-via-word-file-to-get-http-server-auth-bypass)
     - [Finding the endpoints](#finding-the-endpoints)
     - [Bypassing auth backdoor](#bypassing-auth-backdoor)
+  - [Practical application 2: Fuzzing with common payloads/inputs to exploit server](#practical-application-2-fuzzing-with-common-payloadsinputs-to-exploit-server)
+    - [XSS Fuzzing - TODO](#xss-fuzzing---todo)
 
 ### Jayce Bordelon | Kiran Bhat | Oliver Sohn
 
@@ -304,3 +306,8 @@ func legacyLoginHandler(w http.ResponseWriter, r *http.Request) {
 ```
 
 We now have gone from knowing absolutely nothing about an api to bypassing an admin authentication in a legacy route that was left in the server through fuzzing.
+
+
+## Practical application 2: Fuzzing with common payloads/inputs to exploit server
+
+### XSS Fuzzing - TODO
