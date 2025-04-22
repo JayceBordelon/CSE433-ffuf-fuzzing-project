@@ -1,21 +1,19 @@
 # CSE433-ffuf-fuzzing-project
 
 - [CSE433-ffuf-fuzzing-project](#cse433-ffuf-fuzzing-project)
-    - [Jayce Bordelon | Kiran Bhat | Oliver Sohn](#jayce-bordelon--kiran-bhat--oliver-sohn)
+		- [Jayce Bordelon | Kiran Bhat | Oliver Sohn](#jayce-bordelon--kiran-bhat--oliver-sohn)
 - [What is ffuf?](#what-is-ffuf)
-  - [Installing ffuf cli](#installing-ffuf-cli)
-    - [MacOS (Homebrew)](#macos-homebrew)
-    - [Windows (Scoop)](#windows-scoop)
-    - [Linux (via golang)](#linux-via-golang)
-  - [Using ffuf](#using-ffuf)
-    - [ffuf capabilities:](#ffuf-capabilities)
-    - [It also has a ton of helpful cli options that can be found by running:](#it-also-has-a-ton-of-helpful-cli-options-that-can-be-found-by-running)
+	- [Installing ffuf cli](#installing-ffuf-cli)
+		- [MacOS (Homebrew)](#macos-homebrew)
+		- [Windows (Scoop)](#windows-scoop)
+		- [Linux (via golang)](#linux-via-golang)
+	- [Using ffuf](#using-ffuf)
+		- [ffuf capabilities:](#ffuf-capabilities)
+		- [It also has a ton of helpful cli options that can be found by running:](#it-also-has-a-ton-of-helpful-cli-options-that-can-be-found-by-running)
 - [Tutorial](#tutorial)
-  - [Practical application 1: Basic endpoint fuzzing exploit via word file to get HTTP server auth bypass](#practical-application-1-basic-endpoint-fuzzing-exploit-via-word-file-to-get-http-server-auth-bypass)
-    - [Finding the endpoints](#finding-the-endpoints)
-    - [Bypassing auth backdoor](#bypassing-auth-backdoor)
-  - [Practical application 2: Fuzzing with common payloads/inputs to exploit server](#practical-application-2-fuzzing-with-common-payloadsinputs-to-exploit-server)
-    - [XSS Fuzzing - TODO](#xss-fuzzing---todo)
+	- [Practical application 1: Basic endpoint fuzzing exploit via word file to get HTTP server auth bypass](#practical-application-1-basic-endpoint-fuzzing-exploit-via-word-file-to-get-http-server-auth-bypass)
+		- [Finding the endpoints](#finding-the-endpoints)
+		- [Bypassing auth backdoor](#bypassing-auth-backdoor)
 
 ### Jayce Bordelon | Kiran Bhat | Oliver Sohn
 
@@ -71,7 +69,7 @@ ffuf -h
 
 We will now walk through a few examples of how this tool can be used in practice.
 
-## Practical application 1: Basic endpoint fuzzing exploit via word file to get HTTP server auth bypass
+## Practical application: Basic endpoint fuzzing exploit via word file to get HTTP server auth bypass
 
 ### Finding the endpoints
 
@@ -306,8 +304,3 @@ func legacyLoginHandler(w http.ResponseWriter, r *http.Request) {
 ```
 
 We now have gone from knowing absolutely nothing about an api to bypassing an admin authentication in a legacy route that was left in the server through fuzzing.
-
-
-## Practical application 2: Fuzzing with common payloads/inputs to exploit server
-
-### XSS Fuzzing - TODO
