@@ -1,7 +1,0 @@
-<script>alert(1)</script>
-<svg/onload=alert(1)>
-<iframe src=javascript:alert(1)>
-<body onload=alert(1)>
-<scr<script>ipt>alert(1)</scr</script>ipt>
-hello
-foo
