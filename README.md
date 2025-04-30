@@ -4,6 +4,8 @@
 		- [Jayce Bordelon | Kiran Bhat | Oliver Sohn](#jayce-bordelon--kiran-bhat--oliver-sohn)
 - [What is fuzzing?](#what-is-fuzzing)
   	- [How are fuzzers used?](#how-are-fuzzers-used)
+  	- [Use cases of fuzzers?](#use-cases-of-fuzzers)
+  	- [Sources](#sources)
 - [What is ffuf?](#what-is-ffuf)
 	- [Installing ffuf cli](#installing-ffuf-cli)
 		- [MacOS (Homebrew)](#macos-homebrew)
@@ -21,11 +23,22 @@
 
 # What is fuzzing?
 
-Fuzzing is atesting strategy that involves generating random/unexpected inputs in order to discover unusual/unwanted behavior. The main purpose of fuzzing is to explore unexpected behaviors that are beyond the scope of parameters of the systems intended usage  construction. 
+Fuzzing is a testing strategy that involves generating random/unexpected inputs in order to discover unusual/unwanted behavior. The main purpose of fuzzing is to explore unexpected behaviors that are beyond the scope of parameters of the systems intended usage  construction. 
 
 ## How are fuzzers used?
 
-Fuzzers can be used as a black box or white box operation, but are usually used as a black box strategy to find errors and bugs. There's also different variations of fuzzing based on the specifications of the system being tested. For example, we can give fuzzers information about the style of accepted inputs to give it an advantage when generating inputs, called "smart" fuzzing. On the other hand, we can also perform "dumb" fuzzing by giving it no information in order to test more broadly. We can even change the way in which the fuzzer generates its input based on what aspects of the system we are examining, two common forms of input creation are generative and mutative. Mutative fuzzing takes a starting point input and randomly modifies (using common operations such as bit-flipping), whereas generative fuzzing creates entirely new random inputs. Because these inputs are generated from scratch, generative fuzzing requires at least a baseline level of information about input type, meaning they cannot be performed with truly "dumb" fuzzing
+There's also different variations of fuzzing based on the specifications of the system being tested. For example, we can give fuzzers (software that automatically fuzzes a system multiple times) information about the style of inputs to give it an advantage when generating inputs, called "smart" fuzzing. On the other hand, we can also perform "dumb" fuzzing by giving it no information in order to test more broadly. We can even change the way in which the fuzzer generates its input based on what aspects of the system we are examining, two common forms of input creation are generative and mutative. Mutative fuzzing takes a starting point input and randomly modifies (using common operations such as bit-flipping), whereas generative fuzzing creates entirely new random inputs. Because these inputs are generated from scratch, generative fuzzing requires at least a baseline level of information about input type, meaning they cannot be performed with truly "dumb" fuzzing. If the fuzzer has information about the structure of the overall program, it is considered a whitebox fuzzer, otherwise it is considered a blackbox fuzzer, although greybox fuzzers also exist. Although blackbox fuzzers are the most common, whitebox fuzzers may be used in cases where we want to boost the coverage of what components of the system it is accessing (without information about the program structure, it may never fully interact with these components).
+
+## Use cases of fuzzers
+
+Fuzzers have many different uses case but are mostly used to test programs with relatively structured inputs. These includes software such as web software, cloud providers, smart devices (in fact fuzzing is often a requirement for safety certifications of these devices), and automotive software for self-driving cars. In each of these cases, the primary purpose of the fuzzer software is to discover bugs, crashes, and other problems relating to race conditions, deadlock, and memory management.
+
+## Sources
+
+- [https://en.wikipedia.org/wiki/Fuzzing](https://en.wikipedia.org/wiki/Fuzzing)
+- [https://thelinuxcode.com/what-is-fuzz-testing-a-thorough-guide-with-code-examples/](https://thelinuxcode.com/what-is-fuzz-testing-a-thorough-guide-with-code-examples/)
+- [https://www.infosecinstitute.com/resources/hacking/fuzzing-mutation-vs-generation/](https://www.infosecinstitute.com/resources/hacking/fuzzing-mutation-vs-generation/)
+- Professor Shidal's slides on fuzzing
 
 # What is ffuf?
 
