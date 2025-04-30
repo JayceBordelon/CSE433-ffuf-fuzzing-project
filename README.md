@@ -4,7 +4,7 @@
 		- [Jayce Bordelon | Kiran Bhat | Oliver Sohn](#jayce-bordelon--kiran-bhat--oliver-sohn)
 - [What is fuzzing?](#what-is-fuzzing)
   	- [How are fuzzers used?](#how-are-fuzzers-used)
-  	- [Use cases of fuzzers](#use-cases-of-fuzzers)
+  	- [Applications](#applications)
   	- [Sources](#sources)
 - [What is ffuf?](#what-is-ffuf)
 	- [Installing ffuf cli](#installing-ffuf-cli)
@@ -23,15 +23,27 @@
 
 # What is fuzzing?
 
-Fuzzing is a testing strategy that involves generating random/unexpected inputs in order to discover unusual/unwanted behavior. The main purpose of fuzzing is to explore unexpected behaviors that are beyond the scope of parameters of the systems intended usage  construction. 
+Fuzzing is a software testing strategy that involves generating random or unexpected inputs to discover unintended or vulnerable behavior in a system. The main purpose of fuzzing is to explore unexpected edge cases that are beyond the scope of the expected input of the system based on its usage and construction. Fuzzers are software tools that allow us to automate this process.
 
 ## How are fuzzers used?
 
-There's also different variations of fuzzing based on the specifications of the system being tested. For example, we can give fuzzers (software that automatically fuzzes a system multiple times) information about the style of inputs to give it an advantage when generating inputs, called "smart" fuzzing. On the other hand, we can also perform "dumb" fuzzing by giving it no information in order to test more broadly. We can even change the way in which the fuzzer generates its input based on what aspects of the system we are examining, two common forms of input creation are generative and mutative. Mutative fuzzing takes a starting point input and randomly modifies (using common operations such as bit-flipping), whereas generative fuzzing creates entirely new random inputs. Because these inputs are generated from scratch, generative fuzzing requires at least a baseline level of information about input type, meaning they cannot be performed with truly "dumb" fuzzing. If the fuzzer has information about the structure of the overall program, it is considered a whitebox fuzzer, otherwise it is considered a blackbox fuzzer, although greybox fuzzers also exist. Although blackbox fuzzers are the most common, whitebox fuzzers may be used in cases where we want to boost the coverage of what components of the system it is accessing (without information about the program structure, it may never fully interact with these components).
+There are several fuzzing styles used based on the specifications of the system being tested: 
+- **Information about input structure:**
+	- "Smart" fuzzing: gives  information about the style of inputs to give it an 		advantage when generating effective inputs
+ 	- "Dumb" fuzzing: gives no input structure information in order to test more 		broadly.
+- **Types of input generation**
+	- Mutative fuzzing: takes a starting-point input and randomly modifies it (using 	common operations such as bit-flipping)
+ 	- Generative fuzzing: creates entirely new random inputs; because these inputs are 	generated from scratch, generative fuzzing requires at least a baseline level of 	information about input type, meaning they cannot be performed with truly "dumb" 	fuzzing
+- **Information about overall system**
+	- Whitebox fuzzing: gives information about the structure of the overall 		program; may be used in cases where we want to boost the coverage of the system 	components being accessed (without information about the program structure, it may 	never fully interact with these components)
+	- Blackbox fuzzing: gives no information about the system; most commonly used type 	of fuzzing
+ 	- Greybox fuzzing: combination of white and blackbox fuzzing
 
-## Use cases of fuzzers
+Between these three different types of features, we can tailor our specific style of fuzzing based on the complexity and goals of the software system.
 
-Fuzzers have many different uses case but are mostly used to test programs with relatively structured inputs. These includes software such as web software, cloud providers, smart devices (in fact fuzzing is often a requirement for safety certifications of these devices), and automotive software for self-driving cars. In each of these cases, the primary purpose of the fuzzer software is to discover bugs, crashes, and other problems relating to race conditions, deadlock, and memory management.
+## Applications
+
+Fuzzers have many different use cases but are mostly used to test programs with relatively structured inputs. These include software involved with web applications, cloud providers, smart devices (in fact, fuzzing is often a requirement for safety certifications of these devices), and automotive software for self-driving cars. In each of these cases, the primary purpose of the fuzzer software is to discover bugs, crashes, and other problems including race conditions, deadlocks, and memory management issues.
 
 ## Sources
 
