@@ -4,7 +4,7 @@
 		- [Jayce Bordelon | Kiran Bhat | Oliver Sohn](#jayce-bordelon--kiran-bhat--oliver-sohn)
 - [What is fuzzing?](#what-is-fuzzing)
   	- [How are fuzzers used?](#how-are-fuzzers-used)
-  	- [Use cases of fuzzers?](#use-cases-of-fuzzers)
+  	- [Use cases of fuzzers](#use-cases-of-fuzzers)
   	- [Sources](#sources)
 - [What is ffuf?](#what-is-ffuf)
 	- [Installing ffuf cli](#installing-ffuf-cli)
